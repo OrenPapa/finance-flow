@@ -1,4 +1,5 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -6,6 +7,24 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 8px;
   width: 100%;
+`;
+
+export const HeaderContainer = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ViewAll = styled(Link)`
+  color: var(--tertiary-text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--tertiary-text-color);
+  }
 `;
 
 export const SectionTitle = styled(Typography)`

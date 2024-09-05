@@ -7,6 +7,8 @@ import {
   RowWrapper,
   SectionTitle,
   DateText,
+  HeaderContainer,
+  ViewAll,
 } from './styles';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import LocalCafeIcon from '@mui/icons-material/LocalCafe';
@@ -41,7 +43,11 @@ function getIcon(type: string) {
 const TransactionTable: React.FC = () => {
   return (
     <Container>
-      <SectionTitle>Last transactions:</SectionTitle>
+      <HeaderContainer>
+        <SectionTitle>Last transactions:</SectionTitle>
+        <ViewAll to="/">View all</ViewAll>
+      </HeaderContainer>
+
       {transactions.map((transaction, index) => (
         <RowWrapper key={index}>
           <IconWrapper>{getIcon(transaction.type)}</IconWrapper>
