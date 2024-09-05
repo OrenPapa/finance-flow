@@ -114,6 +114,11 @@ export const AccountCardContainer = styled(Box)`
   align-items: center;
   justify-content: center;
   margin-right: 8px;
+
+  @media (max-width: 1600px) {
+    width: 180px;
+    height: 140px;
+  }
 `;
 
 export const AccountCard = styled(Card)<AccountCardProps>`
@@ -133,10 +138,24 @@ export const AccountCard = styled(Card)<AccountCardProps>`
     width: 220px;
     height: 170px;
   }
+
+  @media (max-width: 1600px) {
+    width: ${({ selected }) => (selected ? '180px' : '160px')};
+    height: ${({ selected }) => (selected ? '140px' : '120px')};
+
+    &:hover {
+      width: 180px;
+      height: 140px;
+    }
+  }
 `;
 
 export const AccountTitle = styled(Typography)`
   color: var(--white-text-color);
+
+  @media (max-width: 1600px) {
+    font-size: 1rem;
+  }
 `;
 
 export const AddAccountCard = styled(Card)`
@@ -152,6 +171,11 @@ export const AddAccountCard = styled(Card)`
 
   &:hover {
     filter: brightness(1.05);
+  }
+
+  @media (max-width: 1600px) {
+    width: 160px;
+    height: 120px;
   }
 `;
 

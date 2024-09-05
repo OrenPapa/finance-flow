@@ -10,8 +10,8 @@ export const DashboardContainer = styled(Box)`
   grid-template-areas:
     'item1 item2 item3'
     'item4 item5 item6';
-  grid-template-columns: minmax(644px, 2fr) minmax(240px, 1fr) minmax(
-      240px,
+  grid-template-columns: minmax(560px, 2fr) minmax(300px, 1fr) minmax(
+      300px,
       1fr
     );
   grid-template-rows: 500px 300px;
@@ -41,14 +41,18 @@ export const GridItem = styled(Box)<GridItemProps>`
   font-size: 24px;
   font-weight: bold;
   border-radius: 8px;
-  min-width: ${(props) => (props.area === 'item1' ? '644px' : '240px')};
+  min-width: ${(props) => (props.area === 'item1' ? '560px' : '300px')};
   box-sizing: border-box;
 `;
 
 export const GridItemContent = styled(Box)`
-  /* background-color: yellow; */
   width: calc(100% - 32px);
   height: calc(100% - 32px);
   padding: 16px;
   border-right: 1px solid var(--primary-border-color);
+
+  @media (max-width: 1600px) {
+    width: calc(100% - 16px);
+    padding: 16px 8px;
+  }
 `;

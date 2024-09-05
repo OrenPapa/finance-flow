@@ -25,7 +25,7 @@ export const FilterContainer = styled(Box)`
 export const FilterButton = styled(Button)<FilterButtonProps>`
   background-color: var(--primary-color);
   color: var(--white-text-color);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   padding: 5px 10px;
   margin: 16px 4px 0 4px;
   transition: all 0.2s ease;
