@@ -21,7 +21,7 @@ const generateMockData = (timeFilter: TimeFilter): IncomeCategory[] => {
   const categories = [
     'Salary',
     'Investments',
-    'Transactions',
+    // 'Transactions',
     'Freelance',
     // 'Gifts',
     // 'Bonuses',
