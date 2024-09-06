@@ -37,8 +37,8 @@ export const RowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 56px;
-  border-bottom: 1px solid var(--primary-border-color);
+  height: 60px;
+  border-top: 1px solid var(--primary-border-color);
 `;
 
 export const IconWrapper = styled.div`
@@ -50,7 +50,7 @@ export const IconWrapper = styled.div`
 
 export const ExpenseText = styled(Typography)`
   flex: 1;
-  margin-left: 1rem;
+  margin-left: 16px;
   font-weight: 600;
   color: #333;
   min-width: 200px;

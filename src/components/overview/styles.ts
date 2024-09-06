@@ -45,7 +45,7 @@ export const BannerTitle = styled(Typography)`
 export const BalanceOverview = styled(Box)`
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
+  margin-top: 16px;
 `;
 
 export const SectionTitle = styled(Typography)`
@@ -84,7 +84,7 @@ export const BalanceSum = styled(Typography)`
 export const AccountsSection = styled(Box)`
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
+  margin-top: 16px;
 `;
 
 export const AccountsRow = styled(Box)`

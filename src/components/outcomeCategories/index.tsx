@@ -6,6 +6,7 @@ import {
   SectionTitle,
   FilterContainer,
   FilterButton,
+  ChartContainer,
 } from './styles';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -71,7 +72,9 @@ function OutcomeCategories(): ReactElement {
       <SectionTitle variant="h6" gutterBottom>
         Outcome Categories:
       </SectionTitle>
-      <Doughnut data={chartData} />
+      <ChartContainer>
+        <Doughnut data={chartData} />
+      </ChartContainer>
       <FilterContainer>
         <FilterButton
           selected={timeFilter === 'oneMonth'}

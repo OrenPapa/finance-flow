@@ -8,12 +8,14 @@ interface FilterButtonProps {
 export const IncomeCategoriesContainer = styled(Box)`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const SectionTitle = styled(Typography)`
   user-select: none;
   color: var(--tertiary-text-color);
   font-weight: 600;
+  width: 100%;
 `;
 
 export const FilterContainer = styled(Box)`
@@ -35,4 +37,9 @@ export const FilterButton = styled(Button)<FilterButtonProps>`
     transform: scale(1.1);
     background-color: var(--primary-color);
   }
+`;
+
+export const ChartContainer = styled(Box)`
+  max-width: 100%;
+  max-height: 100%;
 `;

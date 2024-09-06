@@ -6,6 +6,7 @@ import {
   SectionTitle,
   FilterContainer,
   FilterButton,
+  ChartContainer,
 } from './styles';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -82,7 +83,9 @@ function IncomeCategories(): ReactElement {
       <SectionTitle variant="h6" gutterBottom>
         Income Categories:
       </SectionTitle>
-      <Doughnut data={chartData} />
+      <ChartContainer>
+        <Doughnut data={chartData} />
+      </ChartContainer>
 
       <FilterContainer>
         <FilterButton
