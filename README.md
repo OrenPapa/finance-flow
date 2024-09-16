@@ -1,2 +1,2 @@
-# enterprise-management
-Management back office application 
+# Finance Flow
+Personal finance management web app
