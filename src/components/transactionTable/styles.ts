@@ -1,8 +1,7 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -41,7 +40,7 @@ export const SectionTitle = styled(Typography)`
   font-size: 1rem;
 `;
 
-export const RowWrapper = styled.div`
+export const RowWrapper = styled(Box)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +48,7 @@ export const RowWrapper = styled.div`
   border-top: 1px solid var(--primary-border-color);
 `;
 
-export const IconWrapper = styled.div`
+export const IconWrapper = styled(Box)`
   flex: 0 0 40px;
   display: flex;
   justify-content: center;

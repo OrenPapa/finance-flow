@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Card, Typography, styled } from '@mui/material';
 
 const gradients = [
   'linear-gradient(135deg, #e97261 0%, #f0b3a2 100%)', // red-pink gradient

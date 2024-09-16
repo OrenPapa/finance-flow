@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   Box,
   Typography,
@@ -6,6 +5,7 @@ import {
   MenuItem,
   Select as MuiSelect,
   InputLabel,
+  styled,
 } from '@mui/material';
 
 export const OutcomeCategoriesContainer = styled(Box)`

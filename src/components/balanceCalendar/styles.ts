@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   Button,
   IconButton as MuiIconButton,
@@ -7,6 +6,7 @@ import {
   Typography as MuiTypography,
   FormControl as MuiFormControl,
   Box,
+  styled,
 } from '@mui/material';
 
 interface AmountProps {

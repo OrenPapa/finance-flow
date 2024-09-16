@@ -1,7 +1,6 @@
-import { Box } from '@mui/material';
-import styled from 'styled-components';
+import { Box, styled } from '@mui/material';
 
-export const DashboardContainer = styled.div`
+export const DashboardContainer = styled(Box)`
   .MuiGrid-item {
     display: flex;
     justify-content: center;

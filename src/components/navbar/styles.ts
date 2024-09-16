@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   AppBar as MUIAppBar,
   Toolbar as MUIToolbar,
@@ -6,6 +5,7 @@ import {
   IconButton as MUIIconButton,
   Box as MUIBox,
   InputBase as MUIInputBase,
+  styled,
 } from '@mui/material';
 
 interface SearchInputProps {

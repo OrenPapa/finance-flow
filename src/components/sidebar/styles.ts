@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   Drawer as MUIDrawer,
   ListItemButton as MUIListItemButton,
@@ -6,6 +5,7 @@ import {
   ListItemText as MUIListItemText,
   IconButton as MUIIconButton,
   Box as MUIBox,
+  styled
 } from '@mui/material';
 
 interface DrawerProps {

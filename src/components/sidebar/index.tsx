@@ -1,6 +1,7 @@
 import { type ReactElement } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
+import LogoutIcon from '@mui/icons-material/Logout';
 import {
   Drawer,
   IconButton,
@@ -12,6 +13,8 @@ import {
 import { menuItems } from './constants';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase'; // Make sure the correct firebase config is imported
 
 interface SidebarProps {
   expanded: boolean;
@@ -25,6 +28,15 @@ function Sidebar({ expanded, onToggleSidebar }: SidebarProps): ReactElement {
   const handleNavigation = (path: string) => {
     navigate(path);
     onToggleSidebar();
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/sign-in');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
   };
 
   return (
@@ -62,6 +74,14 @@ function Sidebar({ expanded, onToggleSidebar }: SidebarProps): ReactElement {
             <SettingsIcon />
           </ListItemIcon>
           {expanded && <ListItemText primary="Settings" disableTypography />}
+        </ListItemButton>
+
+        {/* Log Out button */}
+        <ListItemButton onClick={handleLogout} $expanded={expanded}>
+          <ListItemIcon>
+            <LogoutIcon />
+          </ListItemIcon>
+          {expanded && <ListItemText primary="Log Out" disableTypography />}
         </ListItemButton>
       </Box>
     </Drawer>

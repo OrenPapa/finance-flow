@@ -1,5 +1,4 @@
-import { Box, Typography } from '@mui/material';
-import styled from 'styled-components';
+import { Box, Typography, styled } from '@mui/material';
 import { Line } from 'react-chartjs-2';
 
 export const ChartContainer = styled(Box)`
