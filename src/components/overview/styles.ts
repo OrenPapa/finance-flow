@@ -46,6 +46,8 @@ export const Banner = styled(Box)`
 export const BannerTitle = styled(Typography)`
   color: var(--white-text-color);
   user-select: none;
+  font-size: 1.5rem;
+  font-weight: 600;
 `;
 
 export const BalanceOverview = styled(Box)`
@@ -57,6 +59,7 @@ export const BalanceOverview = styled(Box)`
 export const SectionTitle = styled(Typography)`
   user-select: none;
   color: var(--tertiary-text-color);
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
   padding: 0;
@@ -81,11 +84,13 @@ export const BalanceItem = styled(Box)`
 export const BalanceTitle = styled(Typography)`
   color: var(--tertiary-text-color);
   user-select: none;
+  font: 0.875rem;
 `;
 
 export const BalanceSum = styled(Typography)`
   color: var(--primary-text-color);
   font-weight: 600;
+  font-size: 1.5rem;
 `;
 
 export const AccountsSection = styled(Box)`
@@ -159,6 +164,7 @@ export const AccountCard = styled(Card)<AccountCardProps>`
 
 export const AccountTitle = styled(Typography)`
   color: var(--white-text-color);
+  font-size: 1.25rem;
 
   @media (max-width: 1600px) {
     font-size: 1rem;

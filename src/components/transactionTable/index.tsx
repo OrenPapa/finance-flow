@@ -48,7 +48,7 @@ const TransactionTable: React.FC = () => {
   return (
     <Container>
       <HeaderContainer>
-        <SectionTitle variant="body1">Last transactions:</SectionTitle>
+        <SectionTitle>Last transactions:</SectionTitle>
         <ViewAll to="/">View all</ViewAll>
       </HeaderContainer>
 

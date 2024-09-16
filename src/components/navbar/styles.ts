@@ -29,6 +29,11 @@ export const AppBar = styled(MUIAppBar)`
   }
 `;
 
+export const Title = styled(MUITypography)`
+  font-size: 1.5rem;
+  font-weight: 600;
+`;
+
 export const Toolbar = styled(MUIToolbar)`
   display: flex;
   justify-content: space-between;

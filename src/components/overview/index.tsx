@@ -34,35 +34,29 @@ const Overview: React.FC = () => {
   return (
     <OverviewContainer>
       <Banner>
-        <BannerTitle variant="h6">Hello, Oren!</BannerTitle>
+        <BannerTitle>Hello, Oren!</BannerTitle>
       </Banner>
 
       <BalanceOverview>
-        <SectionTitle variant="body1">Balance overview:</SectionTitle>
+        <SectionTitle>Balance overview:</SectionTitle>
         <BalanceRow>
           <BalanceItem>
-            <BalanceTitle variant="body2">Current month:</BalanceTitle>
-            <BalanceSum variant="h4">
-              {selectedAccount?.currentMonth}
-            </BalanceSum>
+            <BalanceTitle>Current month:</BalanceTitle>
+            <BalanceSum>{selectedAccount?.currentMonth}</BalanceSum>
           </BalanceItem>
           <BalanceItem>
             <BalanceTitle>Last trimester:</BalanceTitle>
-            <BalanceSum variant="h4">
-              {selectedAccount?.lastTrimester}
-            </BalanceSum>
+            <BalanceSum>{selectedAccount?.lastTrimester}</BalanceSum>
           </BalanceItem>
           <BalanceItem>
             <BalanceTitle>Total balance:</BalanceTitle>
-            <BalanceSum variant="h4">
-              {selectedAccount?.totalBalance}
-            </BalanceSum>
+            <BalanceSum>{selectedAccount?.totalBalance}</BalanceSum>
           </BalanceItem>
         </BalanceRow>
       </BalanceOverview>
 
       <AccountsSection>
-        <SectionTitle variant="body1">Accounts:</SectionTitle>
+        <SectionTitle>Accounts:</SectionTitle>
         <AccountsRow>
           {mockAccounts.map((account, index) => (
             <AccountCardContainer key={account.id}>
@@ -71,7 +65,7 @@ const Overview: React.FC = () => {
                 selected={account.id === selectedAccountId}
                 onClick={() => handleAccountClick(account.id)}
               >
-                <AccountTitle variant="h6">{account.title}</AccountTitle>
+                <AccountTitle>{account.title}</AccountTitle>
               </AccountCard>
             </AccountCardContainer>
           ))}
@@ -80,7 +74,7 @@ const Overview: React.FC = () => {
               <AddAccountIcon>
                 <AddIcon />
               </AddAccountIcon>
-              <AccountTitle variant="h6">Add Account</AccountTitle>
+              <AccountTitle>Add Account</AccountTitle>
             </AddAccountCard>
           </AccountCardContainer>
         </AccountsRow>

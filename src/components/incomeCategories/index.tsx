@@ -45,9 +45,7 @@ function IncomeCategories(): ReactElement {
 
   return (
     <IncomeCategoriesContainer>
-      <SectionTitle variant="body1" gutterBottom>
-        Income Categories:
-      </SectionTitle>
+      <SectionTitle gutterBottom>Income Categories:</SectionTitle>
       <ChartContainer>
         <Doughnut data={chartData} />
       </ChartContainer>

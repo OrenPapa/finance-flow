@@ -27,6 +27,7 @@ export const SectionTitle = styled(Typography)`
   color: var(--tertiary-text-color);
   font-weight: 600;
   width: 100%;
+  font-size: 1rem;
 `;
 
 export const ChartContainer = styled(Box)`

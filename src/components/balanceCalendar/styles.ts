@@ -96,7 +96,7 @@ export const DayText = styled(Typography)`
 
 export const AmountText = styled(Typography)<AmountProps>`
   color: ${(props) => (props.$positive ? 'green' : 'red')};
-  /* margin-top: 8px;
+  margin-top: 8px;
   font-weight: 600;
-  font-size: 24px; */
+  font-size: 24px;
 `;

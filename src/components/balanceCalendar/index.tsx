@@ -72,10 +72,12 @@ function BalanceCalendar(): ReactElement {
 
     return (
       <DayBox key={day.toString()}>
-        <DayText variant="h6">{format(day, 'd')}</DayText>
+        <DayText>{format(day, 'd')}</DayText>
         {activity && (
-          <AmountText variant="h2" $positive={Boolean(activity.amount > 0)}>
-            {activity.amount > 0 ? `+${activity.amount}` : activity.amount}
+          <AmountText $positive={Boolean(activity.amount > 0)}>
+            {activity.amount > 0
+              ? `+${activity.amount}$`
+              : `${activity.amount}$`}
           </AmountText>
         )}
       </DayBox>

@@ -1,13 +1,6 @@
 import { type ReactElement, useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Box,
-  SearchInput,
-} from './styles';
+import { AppBar, Toolbar, IconButton, Box, SearchInput, Title } from './styles';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { pageTitles } from './constants';
@@ -44,9 +37,7 @@ function Navbar(): ReactElement {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h5" fontWeight={600}>
-          {title}
-        </Typography>
+        <Title>{title}</Title>
         <Box sx={{ flexGrow: 1 }} />
         {isSearchOpen ? (
           <SearchInput

@@ -38,6 +38,7 @@ export const SectionTitle = styled(Typography)`
   user-select: none;
   color: var(--tertiary-text-color);
   font-weight: 600;
+  font-size: 1rem;
 `;
 
 export const RowWrapper = styled.div`
