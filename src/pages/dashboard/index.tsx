@@ -1,14 +1,15 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import { Wrapper, GridItem } from './styles';
+import { DashboardContainer, GridItem } from './styles';
 import Overview from '../../components/overview';
 import IncomeCategories from '../../components/incomeCategories';
 import OutcomeCategories from '../../components/outcomeCategories';
 import TransactionTable from '../../components/transactionTable';
+import BalanceChart from '../../components/balanceChart';
 
 const Dashboard: React.FC = () => {
   return (
-    <Wrapper>
+    <DashboardContainer>
       <Grid container spacing={2}>
         {/* First Row */}
         <Grid item xs={12} md={6} className="item1">
@@ -34,10 +35,12 @@ const Dashboard: React.FC = () => {
           </GridItem>
         </Grid>
         <Grid item xs={12} md={6} className="item5">
-          <GridItem className="item5">Item 5</GridItem>
+          <GridItem className="item5">
+            <BalanceChart />
+          </GridItem>
         </Grid>
       </Grid>
-    </Wrapper>
+    </DashboardContainer>
   );
 };
 

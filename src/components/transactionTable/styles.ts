@@ -6,7 +6,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 100%;
+  min-width: calc(100% - 32px);
+  height: 100%;
+  padding: 0 16px;
+
+  @media (max-width: 1600px) {
+    width: 100%;
+    padding: 0 16px;
+  }
 `;
 
 export const HeaderContainer = styled(Box)`

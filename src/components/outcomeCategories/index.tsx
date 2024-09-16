@@ -4,55 +4,26 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import {
   OutcomeCategoriesContainer,
   SectionTitle,
-  FilterContainer,
-  FilterButton,
   ChartContainer,
+  StyledFormControl,
+  Select,
+  SelectItem,
+  SelectLabel,
 } from './styles';
+import { chartColors, mockOutcomeData, options } from './constant';
+import { type SelectChangeEvent } from '@mui/material';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-interface OutcomeCategory {
-  category: string;
-  value: number;
-}
-
 type TimeFilter = 'oneMonth' | 'trimester' | 'oneYear';
 
-const generateMockData = (timeFilter: TimeFilter): OutcomeCategory[] => {
-  const categories = ['Food', 'Transportation', 'Work', 'Bills', 'Others'];
-  const data: OutcomeCategory[] = categories.map((category) => ({
-    category,
-    value: Math.floor(Math.random() * 1000) + 50,
-  }));
-
-  if (timeFilter === 'oneMonth') {
-    return data.map((item) => ({ ...item, value: item.value * 0.5 }));
-  } else if (timeFilter === 'trimester') {
-    return data.map((item) => ({ ...item, value: item.value * 0.75 }));
-  }
-
-  return data;
-};
-
 const generateColors = (length: number): string[] => {
-  const baseColors = [
-    '#FFF176', // Bright Yellow
-    '#FF8A65', // Salmon Orange
-    '#F48FB1', // Light Pink
-    '#80DEEA', // Light Cyan
-    '#4DB6AC', // Turquoise
-    '#4FC3F7', // Light Blue
-    '#29B6F6', // Dodger Blue
-    '#81C784', // Light Green
-    '#AED581', // Pale Green
-    '#FFD54F', // Mustard Yellow
-  ];
-  return baseColors.slice(0, length);
+  return chartColors.slice(0, length);
 };
 
 function OutcomeCategories(): ReactElement {
   const [timeFilter, setTimeFilter] = useState<TimeFilter>('oneMonth');
-  const mockData = generateMockData(timeFilter);
+  const mockData = mockOutcomeData[timeFilter];
 
   const chartData = {
     labels: mockData.map((item) => item.category),
@@ -67,34 +38,35 @@ function OutcomeCategories(): ReactElement {
     ],
   };
 
+  const handleTimeFilterChange = (event: SelectChangeEvent<unknown>) => {
+    const selectedValue = event.target.value as string;
+    setTimeFilter(selectedValue as TimeFilter);
+  };
+
   return (
     <OutcomeCategoriesContainer>
-      <SectionTitle variant="h6" gutterBottom>
-        Outcome Categories:
+      <SectionTitle variant="body1" gutterBottom>
+        Income Categories:
       </SectionTitle>
       <ChartContainer>
         <Doughnut data={chartData} />
       </ChartContainer>
-      <FilterContainer>
-        <FilterButton
-          selected={timeFilter === 'oneMonth'}
-          onClick={() => setTimeFilter('oneMonth')}
+      <StyledFormControl size="small">
+        <SelectLabel>Filter incomes</SelectLabel>
+        <Select
+          labelId="custom-select-label"
+          id="custom-select"
+          value={timeFilter}
+          onChange={handleTimeFilterChange}
+          label="Select Option"
         >
-          One Month
-        </FilterButton>
-        <FilterButton
-          selected={timeFilter === 'trimester'}
-          onClick={() => setTimeFilter('trimester')}
-        >
-          Trimester
-        </FilterButton>
-        <FilterButton
-          selected={timeFilter === 'oneYear'}
-          onClick={() => setTimeFilter('oneYear')}
-        >
-          One Year
-        </FilterButton>
-      </FilterContainer>
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </Select>
+      </StyledFormControl>
     </OutcomeCategoriesContainer>
   );
 }

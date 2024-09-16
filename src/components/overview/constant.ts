@@ -13,13 +13,13 @@ export const mockAccounts = [
     lastTrimester: '+ 3600 $',
     totalBalance: '+ 5400 $',
   },
-  // {
-  //   id: 3,
-  //   title: 'Third Account',
-  //   currentMonth: '+ 435 $',
-  //   lastTrimester: '+ 5900 $',
-  //   totalBalance: '+ 15400 $',
-  // },
+  {
+    id: 3,
+    title: 'Third Account',
+    currentMonth: '+ 435 $',
+    lastTrimester: '+ 5900 $',
+    totalBalance: '+ 15400 $',
+  },
   // {
   //   id: 4,
   //   title: 'Third Account',

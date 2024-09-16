@@ -1,7 +1,8 @@
 import type { ReactElement } from 'react';
+import BalanceCalendar from '../../components/balanceCalendar';
 
 function Calendar(): ReactElement {
-  return <div>Calendar</div>;
+  return <BalanceCalendar />;
 }
 
 export default Calendar;

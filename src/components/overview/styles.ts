@@ -4,8 +4,8 @@ import { Box, Card, Typography } from '@mui/material';
 const gradients = [
   'linear-gradient(135deg, #e97261 0%, #f0b3a2 100%)', // red-pink gradient
   'linear-gradient(135deg, #7c78e9 0%, #b0abea 100%)', // blue-purple gradient
-  'linear-gradient(135deg, #78e97c 0%, #b0eab1 100%)', // green gradient
   'linear-gradient(135deg, #e9b86c 0%, #ebd8a7 100%)', // yellow gradient
+  'linear-gradient(135deg, #78e97c 0%, #b0eab1 100%)', // green gradient
   'linear-gradient(135deg, #6ce9c1 0%, #b0eada 100%)', // teal gradient
 ];
 
@@ -17,10 +17,16 @@ interface AccountCardProps {
 export const OverviewContainer = styled(Box)`
   display: flex;
   flex-direction: column;
+  min-width: calc(100% - 32px);
   height: 100%;
-  width: 100%;
+  padding: 0 16px;
   box-sizing: border-box;
   border-radius: 8px;
+
+  @media (max-width: 1600px) {
+    width: 100%;
+    padding: 0 16px;
+  }
 `;
 
 export const Banner = styled(Box)`
@@ -69,6 +75,7 @@ export const BalanceRow = styled(Box)`
 export const BalanceItem = styled(Box)`
   display: flex;
   flex-direction: column;
+  width: 160px;
 `;
 
 export const BalanceTitle = styled(Typography)`
@@ -108,8 +115,8 @@ export const AccountsRow = styled(Box)`
 `;
 
 export const AccountCardContainer = styled(Box)`
-  width: 220px;
-  height: 170px;
+  width: 210px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,8 +132,8 @@ export const AccountCard = styled(Card)<AccountCardProps>`
   background: ${({ $gradientIndex }) =>
     gradients[$gradientIndex % gradients.length]};
   flex: 0 0 auto;
-  width: ${({ selected }) => (selected ? '220px' : '200px')};
-  height: ${({ selected }) => (selected ? '170px' : '150px')};
+  width: ${({ selected }) => (selected ? '210px' : '190px')};
+  height: ${({ selected }) => (selected ? '160px' : '140px')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,8 +142,8 @@ export const AccountCard = styled(Card)<AccountCardProps>`
   cursor: pointer;
 
   &:hover {
-    width: 220px;
-    height: 170px;
+    width: 210px;
+    height: 160px;
   }
 
   @media (max-width: 1600px) {
@@ -161,8 +168,8 @@ export const AccountTitle = styled(Typography)`
 export const AddAccountCard = styled(Card)`
   background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
   flex: 0 0 auto;
-  width: 200px;
-  height: 150px;
+  width: 190px;
+  height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
