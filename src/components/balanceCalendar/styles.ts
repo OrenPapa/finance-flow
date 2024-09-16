@@ -76,17 +76,17 @@ export const CalendarGrid = styled(Box)`
   max-width: 100%;
 `;
 
-export const DayBox = styled(Box)`
-  background-color: var(--primary-border-color);
-  border-radius: 8px;
-  padding: 8px;
-  min-height: 100px;
-  min-width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
+export const DayBox = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.divider,
+  borderRadius: '8px',
+  padding: '8px',
+  minHeight: '100px',
+  minWidth: '100px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+}));
 
 export const DayText = styled(Typography)`
   position: absolute;

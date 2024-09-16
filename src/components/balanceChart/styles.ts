@@ -14,12 +14,12 @@ export const ChartContainer = styled(Box)`
   }
 `;
 
-export const SectionTitle = styled(Typography)`
-  user-select: none;
-  color: var(--tertiary-text-color);
-  font-weight: 600;
-  width: 100%;
-`;
+export const SectionTitle = styled(Typography)(({ theme }) => ({
+  userSelect: 'none',
+  color: theme.palette.text.secondary,
+  fontWeight: 600,
+  width: '100%',
+}));
 
 export const LineChart = styled(Line)`
   min-width: 100% !important;

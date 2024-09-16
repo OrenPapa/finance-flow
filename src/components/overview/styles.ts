@@ -13,189 +13,186 @@ interface AccountCardProps {
   selected: boolean;
 }
 
-export const OverviewContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  min-width: calc(100% - 32px);
-  height: 100%;
-  padding: 0 16px;
-  box-sizing: border-box;
-  border-radius: 8px;
+export const OverviewContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  minWidth: 'calc(100% - 32px)',
+  height: '100%',
+  padding: '0 16px',
+  boxSizing: 'border-box',
+  borderRadius: '8px',
 
-  @media (max-width: 1600px) {
-    width: 100%;
-    padding: 0 16px;
-  }
-`;
+  [theme.breakpoints.down(1600)]: {
+    width: '100%',
+    padding: '0 16px',
+  },
+}));
 
-export const Banner = styled(Box)`
-  width: calc(100% - 64px);
-  height: 80px;
-  border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color) 0%,
-    var(--secondary-color) 100%
-  );
-  display: flex;
-  align-items: center;
-  padding: 0 32px;
-`;
+export const Banner = styled(Box)(({ theme }) => ({
+  width: 'calc(100% - 64px)',
+  height: '80px',
+  borderRadius: '12px',
+  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+  display: 'flex',
+  alignItems: 'center',
+  padding: '0 32px',
+}));
 
-export const BannerTitle = styled(Typography)`
-  color: var(--white-text-color);
-  user-select: none;
-  font-size: 1.5rem;
-  font-weight: 600;
-`;
+export const BannerTitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.common.white,
+  userSelect: 'none',
+  fontSize: '1.5rem',
+  fontWeight: 600,
+}));
 
-export const BalanceOverview = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-`;
+export const BalanceOverview = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '16px',
+});
 
-export const SectionTitle = styled(Typography)`
-  user-select: none;
-  color: var(--tertiary-text-color);
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-`;
+export const SectionTitle = styled(Typography)(({ theme }) => ({
+  userSelect: 'none',
+  color: theme.palette.text.secondary,
+  fontSize: '1rem',
+  fontWeight: 600,
+  margin: 0,
+  padding: 0,
+}));
 
-export const BalanceRow = styled(Box)`
-  width: calc(100% - 32px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 8px;
-  padding: 0 16px;
-`;
+export const BalanceRow = styled(Box)({
+  width: 'calc(100% - 32px)',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  marginTop: '8px',
+  padding: '0 16px',
+});
 
-export const BalanceItem = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  width: 160px;
-`;
+export const BalanceItem = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '160px',
+});
 
-export const BalanceTitle = styled(Typography)`
-  color: var(--tertiary-text-color);
-  user-select: none;
-  font: 0.875rem;
-`;
+export const BalanceTitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  userSelect: 'none',
+  fontSize: '0.875rem',
+}));
 
-export const BalanceSum = styled(Typography)`
-  color: var(--primary-text-color);
-  font-weight: 600;
-  font-size: 1.5rem;
-`;
+export const BalanceSum = styled(Typography)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  fontWeight: 600,
+  fontSize: '1.5rem',
+}));
 
-export const AccountsSection = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-`;
+export const AccountsSection = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '16px',
+});
 
-export const AccountsRow = styled(Box)`
-  user-select: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  scroll-behavior: smooth;
+export const AccountsRow = styled(Box)(({ theme }) => ({
+  userSelect: 'none',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  overflowX: 'auto',
+  paddingBottom: '8px',
+  scrollBehavior: 'smooth',
 
-  &::-webkit-scrollbar {
-    height: 8px;
-  }
+  '&::-webkit-scrollbar': {
+    height: '8px',
+  },
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--primary-border-color);
-    border-radius: 4px;
-  }
-`;
+  '&::-webkit-scrollbar-thumb': {
+    backgroundColor: theme.palette.divider,
+    borderRadius: '4px',
+  },
+}));
 
-export const AccountCardContainer = styled(Box)`
-  width: 210px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 8px;
+export const AccountCardContainer = styled(Box)(({ theme }) => ({
+  width: '210px',
+  height: '160px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: '8px',
 
-  @media (max-width: 1600px) {
-    width: 180px;
-    height: 140px;
-  }
-`;
+  [theme.breakpoints.down(1600)]: {
+    width: '180px',
+    height: '140px',
+  },
+}));
 
-export const AccountCard = styled(Card)<AccountCardProps>`
-  background: ${({ $gradientIndex }) =>
-    gradients[$gradientIndex % gradients.length]};
-  flex: 0 0 auto;
-  width: ${({ selected }) => (selected ? '210px' : '190px')};
-  height: ${({ selected }) => (selected ? '160px' : '140px')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+export const AccountCard = styled(Card)<AccountCardProps>(
+  ({ $gradientIndex, selected }) => ({
+    background: gradients[$gradientIndex % gradients.length],
+    flex: '0 0 auto',
+    width: selected ? '210px' : '190px',
+    height: selected ? '160px' : '140px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '12px',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
 
-  &:hover {
-    width: 210px;
-    height: 160px;
-  }
+    '&:hover': {
+      width: '210px',
+      height: '160px',
+    },
 
-  @media (max-width: 1600px) {
-    width: ${({ selected }) => (selected ? '180px' : '160px')};
-    height: ${({ selected }) => (selected ? '140px' : '120px')};
+    '@media (max-width: 1600px)': {
+      width: selected ? '180px' : '160px',
+      height: selected ? '140px' : '120px',
 
-    &:hover {
-      width: 180px;
-      height: 140px;
-    }
-  }
-`;
+      '&:hover': {
+        width: '180px',
+        height: '140px',
+      },
+    },
+  }),
+);
 
-export const AccountTitle = styled(Typography)`
-  color: var(--white-text-color);
-  font-size: 1.25rem;
+export const AccountTitle = styled(Typography)(({ theme }) => ({
+  color: theme.palette.common.white,
+  fontSize: '1.25rem',
 
-  @media (max-width: 1600px) {
-    font-size: 1rem;
-  }
-`;
+  [theme.breakpoints.down(1600)]: {
+    fontSize: '1rem',
+  },
+}));
 
-export const AddAccountCard = styled(Card)`
-  background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
-  flex: 0 0 auto;
-  width: 190px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  cursor: pointer;
+export const AddAccountCard = styled(Card)(({ theme }) => ({
+  background: 'linear-gradient(135deg, #4caf50 0%, #81c784 100%)',
+  flex: '0 0 auto',
+  width: '190px',
+  height: '140px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: '12px',
+  cursor: 'pointer',
 
-  &:hover {
-    filter: brightness(1.05);
-  }
+  '&:hover': {
+    filter: 'brightness(1.05)',
+  },
 
-  @media (max-width: 1600px) {
-    width: 160px;
-    height: 120px;
-  }
-`;
+  [theme.breakpoints.down(1600)]: {
+    width: '160px',
+    height: '120px',
+  },
+}));
 
-export const AddAccountIcon = styled(Box)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white-text-color);
-  font-size: 2rem;
-  margin-right: 8px;
-`;
+export const AddAccountIcon = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: theme.palette.common.white,
+  fontSize: '2rem',
+  marginRight: '8px',
+}));

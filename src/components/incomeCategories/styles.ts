@@ -22,13 +22,12 @@ export const IncomeCategoriesContainer = styled(Box)`
   }
 `;
 
-export const SectionTitle = styled(Typography)`
-  user-select: none;
-  color: var(--tertiary-text-color);
-  font-weight: 600;
-  width: 100%;
-  font-size: 1rem;
-`;
+export const SectionTitle = styled(Typography)(({ theme }) => ({
+  userSelect: 'none',
+  color: theme.palette.text.secondary,
+  fontWeight: 600,
+  width: '100%',
+}));
 
 export const ChartContainer = styled(Box)`
   max-width: 100%;
