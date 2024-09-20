@@ -13,23 +13,18 @@ interface AccountCardProps {
   selected: boolean;
 }
 
-export const OverviewContainer = styled(Box)(({ theme }) => ({
+export const OverviewContainer = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
-  minWidth: 'calc(100% - 32px)',
+  justifyContent: 'space-between',
+  minWidth: '100%',
+  width: '300px',
   height: '100%',
-  padding: '0 16px',
   boxSizing: 'border-box',
   borderRadius: '8px',
-
-  [theme.breakpoints.down(1600)]: {
-    width: '100%',
-    padding: '0 16px',
-  },
-}));
+});
 
 export const Banner = styled(Box)(({ theme }) => ({
-  width: 'calc(100% - 64px)',
   height: '80px',
   borderRadius: '12px',
   background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
@@ -48,7 +43,6 @@ export const BannerTitle = styled(Typography)(({ theme }) => ({
 export const BalanceOverview = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
-  marginTop: '16px',
 });
 
 export const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -60,21 +54,28 @@ export const SectionTitle = styled(Typography)(({ theme }) => ({
   padding: 0,
 }));
 
-export const BalanceRow = styled(Box)({
-  width: 'calc(100% - 32px)',
+export const BalanceRow = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
-  marginTop: '8px',
-  padding: '0 16px',
-});
+  padding: '0 32px',
 
-export const BalanceItem = styled(Box)({
+  [theme.breakpoints.down(1600)]: {
+    padding: '0 16px',
+  },
+}));
+
+export const BalanceItem = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   width: '160px',
-});
+  height: '48px',
+
+  [theme.breakpoints.down(900)]: {
+    width: '100px',
+  },
+}));
 
 export const BalanceTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.secondary,
@@ -85,13 +86,20 @@ export const BalanceTitle = styled(Typography)(({ theme }) => ({
 export const BalanceSum = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.primary,
   fontWeight: 600,
-  fontSize: '1.5rem',
+  fontSize: '2rem',
+
+  [theme.breakpoints.down(1600)]: {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.down(900)]: {
+    fontSize: '1.25rem',
+  },
 }));
 
 export const AccountsSection = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
-  marginTop: '16px',
+  width: '100%',
 });
 
 export const AccountsRow = styled(Box)(({ theme }) => ({
@@ -103,6 +111,8 @@ export const AccountsRow = styled(Box)(({ theme }) => ({
   overflowX: 'auto',
   paddingBottom: '8px',
   scrollBehavior: 'smooth',
+  marginTop: '4px',
+  width: '100%',
 
   '&::-webkit-scrollbar': {
     height: '8px',

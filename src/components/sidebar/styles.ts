@@ -5,6 +5,7 @@ import {
   ListItemText as MUIListItemText,
   IconButton as MUIIconButton,
   Box as MUIBox,
+  Backdrop as MUIBackdrop,
   styled,
 } from '@mui/material';
 
@@ -38,6 +39,7 @@ export const Drawer = styled(MUIDrawer)<DrawerProps>(
     flexShrink: 0,
     whiteSpace: 'nowrap',
     transition: 'width 0.3s ease',
+
     '& .MuiDrawer-paper': {
       width: $expanded ? '240px' : '56px',
       boxSizing: 'border-box',
@@ -48,15 +50,35 @@ export const Drawer = styled(MUIDrawer)<DrawerProps>(
       justifyContent: 'space-between',
       height: '100vh',
       overflow: 'hidden',
+
+      [theme.breakpoints.down(600)]: {
+        width: $expanded ? '240px' : '0',
+        position: 'fixed',
+        top: '57px',
+        height: 'calc(100vh - 57px)',
+      },
+    },
+
+    [theme.breakpoints.down(600)]: {
+      position: 'fixed',
+      visibility: $expanded ? 'show' : 'none',
+      width: $expanded ? '240px' : '0',
+      top: '57px',
+      height: 'calc(100vh - 57px)',
+      zIndex: '1000',
     },
   }),
 );
 
 export const IconButton = styled(MUIIconButton)<IconButtonProps>(
-  ({ $expanded }) => ({
+  ({ theme, $expanded }) => ({
     display: 'flex',
     justifyContent: $expanded ? 'flex-end' : 'center',
     padding: '1rem',
+
+    [theme.breakpoints.down(600)]: {
+      display: 'none',
+    },
   }),
 );
 
@@ -96,3 +118,10 @@ export const ListItemText = styled(MUIListItemText)<ListItemTextProps>(
       : theme.palette.text.secondary,
   }),
 );
+
+export const BackdropStyled = styled(MUIBackdrop)(({ theme }) => ({
+  [theme.breakpoints.down(600)]: {
+    zIndex: 999,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+}));

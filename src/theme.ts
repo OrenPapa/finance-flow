@@ -1,41 +1,49 @@
 import { createTheme } from '@mui/material/styles';
 
-// Define your custom theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976D2', // equivalent to --primary-color
+      main: '#1976D2',
     },
     secondary: {
-      main: '#5fa6ec', // equivalent to --secondary-color
+      main: '#5fa6ec',
     },
     text: {
-      primary: '#000000', // equivalent to --primary-text-color
-      secondary: '#808080', // equivalent to --tertiary-text-color
+      primary: '#000000',
+      secondary: '#808080',
     },
     background: {
-      default: '#FFFFFF', // equivalent to --body-color
+      default: '#FFFFFF',
     },
   },
   typography: {
     fontFamily: 'Roboto, sans-serif',
     h1: {
-      color: '#050C9C', // equivalent to --title-text-color
+      color: '#050C9C',
     },
     body1: {
-      color: '#000000', // equivalent to --primary-text-color
+      color: '#000000',
     },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderColor: '#e0e0e0', // equivalent to --primary-border-color
+          borderColor: '#e0e0e0',
           '&:hover': {
-            backgroundColor: '#f0f0f0', // equivalent to --hover-background-color
+            backgroundColor: '#f0f0f0',
           },
         },
       },
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 768, // Custom lg breakpoint
+      md: 900,
+      lg: 1350, // Custom lg breakpoint
+      xl: 1536,
     },
   },
 });

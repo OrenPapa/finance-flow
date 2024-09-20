@@ -11,15 +11,10 @@ import {
 export const IncomeCategoriesContainer = styled(Box)`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  width: calc(100% - 32px);
+  min-width: 100%;
   height: 100%;
-  padding: 0 16px;
-
-  @media (max-width: 1600px) {
-    width: 100%;
-    padding: 0 16px;
-  }
 `;
 
 export const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -37,7 +32,6 @@ export const ChartContainer = styled(Box)`
 export const StyledFormControl = styled(FormControl)`
   width: 100%;
   max-width: 400px;
-  margin-top: 32px;
 `;
 
 export const SelectItem = styled(MenuItem)``;

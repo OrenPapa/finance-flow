@@ -4,14 +4,8 @@ import { Line } from 'react-chartjs-2';
 export const ChartContainer = styled(Box)`
   display: flex;
   flex-direction: column;
-  width: calc(100% - 32px);
+  width: 100%;
   height: 100%;
-  padding: 0 16px;
-
-  @media (max-width: 1600px) {
-    width: 100%;
-    padding: 0 16px;
-  }
 `;
 
 export const SectionTitle = styled(Typography)(({ theme }) => ({

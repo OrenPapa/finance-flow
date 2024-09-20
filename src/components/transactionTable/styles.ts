@@ -1,25 +1,19 @@
 import { Box, Typography, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export const Container = styled(Box)(({ theme }) => ({
+export const Container = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
-  gap: '8px',
-  minWidth: 'calc(100% - 32px)',
+  minWidth: '100%',
   height: '100%',
-  padding: '0 16px',
-
-  [theme.breakpoints.down(1600)]: {
-    width: '100%',
-    padding: '0 16px',
-  },
-}));
+});
 
 export const HeaderContainer = styled(Box)({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
+  marginBottom: '8px',
 });
 
 export const ViewAll = styled(Link)(({ theme }) => ({
@@ -45,7 +39,7 @@ export const RowWrapper = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   height: '60px',
-  borderTop: `1px solid ${theme.palette.divider}`,
+  borderBottom: `1px solid ${theme.palette.divider}`,
 }));
 
 export const IconWrapper = styled(Box)({
@@ -61,12 +55,21 @@ export const ExpenseText = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   color: theme.palette.text.primary,
   minWidth: '200px',
+
+  [theme.breakpoints.down(900)]: {
+    minWidth: '100px',
+    fontWeight: 400,
+  },
 }));
 
 export const DateText = styled(Typography)(({ theme }) => ({
   flex: '0 0 120px',
   color: theme.palette.text.secondary,
   minWidth: '100px',
+
+  [theme.breakpoints.down(900)]: {
+    minWidth: '80px',
+  },
 }));
 
 export const AmountText = styled(Typography)(({ theme }) => ({
@@ -75,4 +78,9 @@ export const AmountText = styled(Typography)(({ theme }) => ({
   minWidth: '100px',
   textAlign: 'end',
   color: theme.palette.text.primary,
+
+  [theme.breakpoints.down(900)]: {
+    minWidth: '50px',
+    fontWeight: 400,
+  },
 }));
