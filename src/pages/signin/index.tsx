@@ -3,7 +3,6 @@ import { CircularProgress } from '@mui/material';
 import {
   Container,
   Card,
-  Form,
   Title,
   Actions,
   SignInLink,
@@ -53,7 +52,7 @@ function SignIn(): ReactElement {
       <Card>
         <Title>Sign In</Title>
         {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
-        <Form
+        <form
           autoComplete="off"
           onSubmit={async (e) => handleSignIn(e, form, setError)}
         >
@@ -114,7 +113,7 @@ function SignIn(): ReactElement {
               Facebook
             </ExternalButton>
           </ExternalLoginContainer>
-        </Form>
+        </form>
         <Actions>
           <p>
             Don&apos;t have an account?{' '}

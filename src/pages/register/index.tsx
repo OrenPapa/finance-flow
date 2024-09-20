@@ -13,7 +13,6 @@ import {
 import {
   Container,
   Card,
-  Form,
   Title,
   Subtitle,
   Actions,
@@ -129,11 +128,17 @@ function Register(): ReactElement {
       <Card>
         <Title>Register</Title>
         <Subtitle>Enter your details to register</Subtitle>
-        <Form
+        <form
           onSubmit={async (e) =>
             handleRegistrationSubmit(e, form, errors, setErrors, termsAccepted)
           }
           autoComplete="off"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '15px',
+            marginTop: '20px',
+          }}
         >
           <input type="text" style={{ display: 'none' }} />
           <input type="password" style={{ display: 'none' }} />
@@ -306,7 +311,7 @@ function Register(): ReactElement {
               Facebook
             </ExternalButton>
           </ExternalLoginContainer>
-        </Form>
+        </form>
       </Card>
     </Container>
   );

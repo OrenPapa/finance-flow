@@ -1,13 +1,14 @@
 import type { ReactElement } from 'react';
-import GlobalStyle from './GlobalStyle';
 import Router from './router';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import theme from './theme';
 
 function App(): ReactElement {
   return (
-    <>
-      <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router />
-    </>
+    </ThemeProvider>
   );
 }
 

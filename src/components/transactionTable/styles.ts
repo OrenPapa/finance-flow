@@ -1,81 +1,86 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: calc(100% - 32px);
-  height: 100%;
-  padding: 0 16px;
+export const Container = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  minWidth: '100%',
+  height: '100%',
+});
 
-  @media (max-width: 1600px) {
-    width: 100%;
-    padding: 0 16px;
-  }
-`;
+export const HeaderContainer = styled(Box)({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginBottom: '8px',
+});
 
-export const HeaderContainer = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
+export const ViewAll = styled(Link)(({ theme }) => ({
+  color: theme.palette.text.secondary,
+  textDecoration: 'none',
+  fontSize: '1rem',
+  fontWeight: 400,
 
-export const ViewAll = styled(Link)`
-  color: var(--tertiary-text-color);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
+  '&:hover': {
+    color: theme.palette.text.secondary,
+  },
+}));
 
-  &:hover {
-    color: var(--tertiary-text-color);
-  }
-`;
+export const SectionTitle = styled(Typography)(({ theme }) => ({
+  userSelect: 'none',
+  color: theme.palette.text.secondary,
+  fontWeight: 600,
+  fontSize: '1rem',
+}));
 
-export const SectionTitle = styled(Typography)`
-  user-select: none;
-  color: var(--tertiary-text-color);
-  font-weight: 600;
-  font-size: 1rem;
-`;
+export const RowWrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  height: '60px',
+  borderBottom: `1px solid ${theme.palette.divider}`,
+}));
 
-export const RowWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  border-top: 1px solid var(--primary-border-color);
-`;
+export const IconWrapper = styled(Box)({
+  flex: '0 0 40px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
 
-export const IconWrapper = styled.div`
-  flex: 0 0 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+export const ExpenseText = styled(Typography)(({ theme }) => ({
+  flex: 1,
+  marginLeft: '16px',
+  fontWeight: 600,
+  color: theme.palette.text.primary,
+  minWidth: '200px',
 
-export const ExpenseText = styled(Typography)`
-  flex: 1;
-  margin-left: 16px;
-  font-weight: 600;
-  color: #333;
-  min-width: 200px;
-  color: var(--primary-text-color);
-`;
+  [theme.breakpoints.down(900)]: {
+    minWidth: '100px',
+    fontWeight: 400,
+  },
+}));
 
-export const DateText = styled(Typography)`
-  flex: 0 0 120px;
-  color: #757575;
-  min-width: 100px;
-  color: var(--tertiary-text-color);
-`;
+export const DateText = styled(Typography)(({ theme }) => ({
+  flex: '0 0 120px',
+  color: theme.palette.text.secondary,
+  minWidth: '100px',
 
-export const AmountText = styled(Typography)`
-  font-size: 1rem;
-  font-weight: 600;
-  min-width: 100px;
-  text-align: end;
-  color: var(--primary-text-color);
-`;
+  [theme.breakpoints.down(900)]: {
+    minWidth: '80px',
+  },
+}));
+
+export const AmountText = styled(Typography)(({ theme }) => ({
+  fontSize: '1rem',
+  fontWeight: 600,
+  minWidth: '100px',
+  textAlign: 'end',
+  color: theme.palette.text.primary,
+
+  [theme.breakpoints.down(900)]: {
+    minWidth: '50px',
+    fontWeight: 400,
+  },
+}));

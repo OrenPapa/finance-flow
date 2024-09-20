@@ -22,13 +22,17 @@ function PrivateLayout(): ReactElement {
           flexDirection: 'column',
         }}
       >
-        <Navbar />
+        <Navbar expanded={expanded} onToggleSidebar={handleToggleSidebar} />
         <Box
           component="main"
           sx={{
             flexGrow: 1,
             maxWidth: '1864px',
-            // maxHeight: '820px',
+            marginTop: {
+              xs: '58px',
+              sm: '66px',
+              md: '66px',
+            },
             p: 2,
           }}
         >
